@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-160363593-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-160363593-1');
+</script>
+
+        <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+        <meta http-equiv="Pragma" content="no-cache" />
+        <meta http-equiv="Expires" content="0" />
+	 <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Powerbi testing</title>
+		<link rel="shortcut icon" type="image/x-icon" href="https://dataclue.bi/wp-content/uploads/2020/03/DataClue_Logo_logo-sign-color.ico">
+	
+		
+    </head>
+    <body>
+        <div id="pbiTarget"></div>
+	
+	<p>Test 3.0</p>
+        <script src="mobile-detect.min.js"></script>
+
+        <script>
+            var mobileYesHtml;  
+            var mobileNoHtml;
+
+        
+                mobileYesHtml = <iframe width="450" height="750" src="https://app.powerbi.com/view?r=eyJrIjoiOTEyZjQxMWEtNWZkOC00OGZjLTkwMDktMDBhMTc3ZWZlNWIwIiwidCI6ImI1ZGFlNTY2LWFkOGYtNDRlMS05OTI5LTU2NjlmMWRiYjM0MyJ9" frameborder="0" allowFullScreen="true"></iframe>
+                mobileNoHtml = <iframe width="100%" height="820" src="https://app.powerbi.com/view?r=eyJrIjoiOTEyZjQxMWEtNWZkOC00OGZjLTkwMDktMDBhMTc3ZWZlNWIwIiwidCI6ImI1ZGFlNTY2LWFkOGYtNDRlMS05OTI5LTU2NjlmMWRiYjM0MyJ9" frameborder="0" allowFullScreen="true"></iframe>
+ 		        // mobileYesHtml = "<iframe width=\"500\" height=\"750\" src=\"https://app.powerbi.com/view?r=eyJrIjoiYTNlN2EyMzAtZGIxMi00ODY1LThhYmEtZWZjN2JjMWQyZGI0IiwidCI6ImI1ZGFlNTY2LWFkOGYtNDRlMS05OTI5LTU2NjlmMWRiYjM0MyJ9\" frameborder=\"0\" allowFullScreen=\"true\"></iframe>";
+                // mobileNoHtml = "<iframe width=\"100%\" height=\"820\" src=\"https://app.powerbi.com/view?r=eyJrIjoiOWM3NDQwZmUtMDc2Yy00MzIyLWEwNDUtZmM1YWQ1MmMxZTVhIiwidCI6ImI1ZGFlNTY2LWFkOGYtNDRlMS05OTI5LTU2NjlmMWRiYjM0MyJ9\" frameborder=\"0\" allowFullScreen=\"true\"></iframe>";
+                // mobileNoHtml = "<iframe width=\"100%\" height=\"820\" src=\"https://app.powerbi.com/view?r=eyJrIjoiMzk3ZmQ3MGItNTI0ZC00ZWQxLTljN2YtNjMyMTRhNjdhMWMzIiwidCI6ImI1ZGFlNTY2LWFkOGYtNDRlMS05OTI5LTU2NjlmMWRiYjM0MyJ9\" frameborder=\"0\" allowFullScreen=\"true\"></iframe>";
+ 		        // mobileYesHtml = "<iframe width=\"450\" height=\"750\" src=\"https://app.powerbi.com/view?r=eyJrIjoiYTRlOTFiNzAtOWQ3My00MTdhLTg0MmEtZjI0YTg2MDQzZjY0IiwidCI6ImI1ZGFlNTY2LWFkOGYtNDRlMS05OTI5LTU2NjlmMWRiYjM0MyJ9&pageName=ReportSection\" frameborder=\"0\" allowFullScreen=\"true\"></iframe>";
+		        // mobileYesHtml = "<iframe width=\"450\" height=\"750\" src=\"https://app.powerbi.com/view?r=eyJrIjoiYTAzY2MyYmYtZmNkOS00MDJkLWEwMzktMmRhN2VlYzRjNzFmIiwidCI6ImI1ZGFlNTY2LWFkOGYtNDRlMS05OTI5LTU2NjlmMWRiYjM0MyJ9&pageName=ReportSection\" frameborder=\"0\" allowFullScreen=\"true\"></iframe>";
+
+            window.addEventListener("load", function () {
+        
+                var md = new MobileDetect(window.navigator.userAgent);
+        
+                if (md.mobile() == null)
+                {
+                    // Not Mobile
+                    document.getElementById("pbiTarget").innerHTML = mobileNoHtml;
+                }
+                else
+                {
+                    //	Mobile
+                    document.getElementById("pbiTarget").innerHTML = mobileYesHtml;
+// 		    document.getElementById("pbiTarget").style.padding = "50px 50px 50px 30px";
+
+			
+			
+                }
+            });
+        </script>        
+
+    </body>
+</html>
